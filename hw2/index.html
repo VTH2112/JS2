@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .header {
+            display: flex;
+            padding: 30px;
+        }
+
+        .title {
+            display: flex;
+            justify-content: center;
+        }
+
+        .bottom {
+            width: 99%;
+            height: auto;
+            display: flex;
+            justify-content: flex-start;
+            margin-left: 0.5%;
+            margin-right:0.5%;
+            margin-bottom:0.5%;
+        }
+
+        .container {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .left {
+            padding-right: 50px;
+        }
+
+        .right {
+            display: flex;
+            align-items: flex-end;
+        }
+        .content{
+            display: flex;
+            width: auto;
+            height: 50px;
+            margin-left: 20px;
+            align-items: flex-end;
+        }
+
+        label {
+            width: 80px;
+        }
+
+        .num1 {
+            display: flex;
+            padding-bottom: 10px;
+        }
+
+        .num2 {
+            display: flex;
+
+        }
+
+        button {
+            width: 80px;
+            height: 30px;
+        }
+
+        table,
+        tr,
+        td,th {
+            border: 1px solid black;
+            border-collapse: collapse;
+            font-size: 25px;
+            padding: 10px;
+        
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>find prime number</h1>
+        </div>
+        <div class="header">
+
+            <div class="left">
+                <div class="num1">
+                    <label for="num1">Number 1</label>
+                    <input type="number" id="num1" name="num1">
+                </div>
+                <div class="num2">
+                    <label for="num2">Number 2</label>
+                    <input type="number" id="num2" name="num2">
+                </div>
+            </div>
+
+            <div class="right">
+                <button type="button" id="Enter">Enter</button>
+            </div>
+            <div class="content"><p id="print"></p></div>
+
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

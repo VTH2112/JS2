@@ -1,0 +1,60 @@
+#stopwatch{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    
+}
+.stopwatch-container{
+    display :flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom: 40px;
+    width:50%;
+    
+}
+
+button{
+    width: 70px;
+    height: 35px;
+    margin:5px;
+}
+span{
+    
+    font-size:50px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    border:1px solid black;
+    width:250px;
+    height:250px;
+    margin-right: 50px;
+    border-radius:50%;
+
+}
+.btnArea{
+    display:flex;
+    flex-direction:column;
+}
+p{
+    font-size:30px;
+    font-weight:bold;
+}
+.start{
+   background-color:#32CD32;
+   color:black;
+   border:1px solid #32CD32;
+   outline:1px solid black;
+}
+#pause{
+    background-color:	#FFDEAD;
+    color:black;
+    border:1px solid 	#FFDEAD;
+    outline:1px solid black;
+ }
+ 
+ .stop{
+    background-color:	#FF0033;
+    color:white;
+    border:1px solid 	#FF0033;
+    outline:1px solid black;
+ }

@@ -74,7 +74,7 @@ class SignIn {
         <a href="#" class="fa fa-twitter fa-social"></a>
         <span class="pr-3"></span>
         <a href="#" class="fa fa-google fa-social"></a>`
-        // this.divLogin.appendChild(this.btnSignUp)
+  
     }
 
     handleRedirectRegister = (e) => {

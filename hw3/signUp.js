@@ -51,10 +51,7 @@ class SignUp {
         this.inputConfirmPassword.label.children[0].setAttribute("class", "fa fa-unlock-alt fa-2x")
         this.inputCheckbox.label.innerHTML = `I agree all statements in <span style ="text-decoration: underline; cursor: pointer">Terms of service</span>`
         this.inputCheckbox.label.setAttribute("id","checkbox")
-        // this.form.appendChild(this.title)
-        // this.form.appendChild(this.inputEmail.container)
-        // this.form.appendChild(this.inputPassword.container)
-        // this.form.appendChild(this.inputConfirmPassword.container)
+
 
         this.btnSignIn.innerHTML = "I am already member"
         this.btnSignUp.innerHTML = "Register"

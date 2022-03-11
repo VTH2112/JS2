@@ -40,7 +40,7 @@ class SignUp {
 
         this.divImgSignUp.setAttribute("class", "col-sm-5 divImg")
         this.divImgSignUp.innerHTML = `<lottie-player src="https://assets8.lottiefiles.com/packages/lf20_rpsybtsb.json"  
-        background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>`
+        background="transparent"  speed="1"  style="width: 500px; height: 500px;"  loop  autoplay></lottie-player>`
         this.divImgSignUp.appendChild(this.btnSignIn)
         this.btnSignIn.setAttribute("class", "createAcc")
 

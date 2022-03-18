@@ -1,9 +1,9 @@
 import {
     InputCommon
-} from './common/InputCommon.js'
+} from '../common/inputCommon.js'
 import {
     setScreen
-} from './index.js'
+} from '../index.js'
 import {
     SignIn
 } from './signIn.js'
@@ -67,19 +67,24 @@ class SignUp {
             const loginScreen = new SignIn()
             setScreen(loginScreen.container)
         })
-        this.btnSignUp.addEventListener("click",this.handleSignUP)
+        this.btnSignUp.addEventListener("click", this.handleSignUP)
 
-        // this.divSignUp.appendChild(this.btnSignIn)
         this.divSignUp.appendChild(this.btnSignUp)
     }
 
-    handleSignUP =  (e) => {
+    handleSignUP = (e) => {
         e.preventDefault()
         const emailValue = this.inputEmail.getValue();
         const passwordValue = this.inputPassword.getValue();
         const nameValue = this.inputName.getValue();
 
         // check Email - password
+
+        db.collection("users").add({
+            email: emailValue,
+            name: nameValue,
+            password: passwordValue,
+        });
 
         // SignUp
         firebase.auth().createUserWithEmailAndPassword(emailValue, passwordValue)
@@ -88,6 +93,15 @@ class SignUp {
                 var user = userCredential.user;
                 // ...
                 console.log(`User ${emailValue} is created`);
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Sign Up Success',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                const loginScreen = new SignIn()
+                setScreen(loginScreen.container)
             })
             .catch((error) => {
                 var errorCode = error.code;
@@ -96,17 +110,6 @@ class SignUp {
                 console.log(errorMessage);
             });
 
-        // if (!nameValue) {
-        //     this.inputName.setErrorMessage("Name cannot be empty")
-        // } else if (!emailValue) {
-        //     this.inputEmail.setErrorMessage("Email cannot be empty")
-        // } else if (!passwordValue) {
-        //     this.inputPassword.setErrorMessage("Password cannot be empty")
-        // } else {
-        //     this.inputName.setErrorMessage("")
-        //     this.inputEmail.setErrorMessage("")
-        //     this.inputPassword.setErrorMessage("")
-        // }
     }
 }
 

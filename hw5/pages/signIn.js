@@ -1,13 +1,15 @@
 import {
     InputCommon
-} from './common/InputCommon.js'
+} from '../common/inputCommon.js'
 import {
     setScreen
-} from './index.js'
+} from '../index.js'
 import {
     SignUp
 } from './signUp.js'
-
+import {
+    Chat
+} from "./chat.js"
 class SignIn {
     container = document.createElement("div")
     title = document.createElement("h1")
@@ -45,7 +47,6 @@ class SignIn {
         this.divLogin.appendChild(this.inputCheckbox.container)
 
 
-
         this.inputEmail.label.children[0].setAttribute("class", "fa fa-user fa-2x")
         this.inputPassword.label.children[0].setAttribute("class", "fa fa-lock fa-2x")
         this.inputCheckbox.label.innerHTML = "Remember me"
@@ -71,27 +72,38 @@ class SignIn {
     handleSignIn = (e) => {
         e.preventDefault()
         const emailValue = this.inputEmail.getValue();
-   
+        const passwordValue = this.inputPassword.getValue();
 
         if (!emailValue) {
             this.inputEmail.setErrorMessage("Email cannot be empty")
         } else {
             this.inputEmail.setErrorMessage("")
         }
-
         firebase.auth().signInWithEmailAndPassword(emailValue, passwordValue)
             .then((userCredential) => {
                 // Signed in
 
                 var user = userCredential.user;
                 console.log(`Sign in`);
-                alert("dang nhap thanh cong")
-                console.log(user);
+                console.dir(db.collection("users"))
+              
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Login Success',
+                    showConfirmButton: false,
+                    timer: 1000
+                })
+                
+
             })
             .catch((error) => {
                 var errorCode = error.code;
                 var errorMessage = error.message;
-
+                if(errorCode === "auth/wrong-password"){
+                    this.inputPassword.setErrorMessage("Wrong Password")
+                }
+                console.log(errorCode);
             });
 
     }

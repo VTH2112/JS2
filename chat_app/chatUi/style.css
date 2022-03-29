@@ -1,8 +1,8 @@
-* {
+/* * {
     padding: 0 !important;
     margin: 0 !important;
     box-sizing: border-box;
-}
+} */
 
 body,
 html {
@@ -334,7 +334,7 @@ input:focus::-webkit-input-placeholder {
 
 .chat-area {
     background-color: #f2f7f7;
-    height: 80%;
+    height: 77.9%;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;

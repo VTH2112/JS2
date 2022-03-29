@@ -14,8 +14,9 @@ firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     var uid = user.uid;
 
-    const chat = new Chat();
-    setScreen(chat.container);
+    // const chat = new Chat();
+    // setScreen(chat.container);
+    location.replace("../chatUi/index.html")
   } else {
     
     const loginScreen = new SignIn();

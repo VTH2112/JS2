@@ -86,7 +86,6 @@ class SignIn {
                 var user = userCredential.user;
                 console.log(`Sign in`);
                 console.dir(db.collection("users"))
-                location.replace("../chatUi/index.html")
                 db.collection("users").onSnapshot((snapshot) => {
                     snapshot.docChanges().forEach((change) => {
                       if (change.type === "added") {

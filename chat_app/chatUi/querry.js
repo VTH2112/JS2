@@ -36,6 +36,53 @@ $(document).ready(function () {
             "color": "#a5b5c1"
         });
     });
+    $("#logOutBtn").click(function(){
+        firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          // Sign-out successful.
+          location.replace("../index.html")
+          console.log("Sign out successful");
+        })
+        .catch((error) => {
+          // An error happened.
+          console.log(error.message);
+        });
+        
+    })
+    $(".testUser").click(() => {
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+              var uid = user.uid;
+              db.collection("users").onSnapshot((snapshot) => {
+                snapshot.docChanges().forEach((change) => {
+                  if (change.type === "added") {
+                    if(firebase.auth().currentUser.email == change.doc.data().email){
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: `Hi ${change.doc.data().name}`,
+                            showConfirmButton: false,
+                            timer: 1000
+                        })
+                    }
+                  }
+    
+                  if (change.type === "modified") {
+              
+                  }
+                  if (change.type === "removed") {
+                   
+                  }
+                });
+              });
+            } else {
+              
+                alert("not user")
+            }
+          });
+    })
     $("#nav_item1").click(function () {
         $("#nav_item1").css({
             "border-left": "3px solid #55d48b ",
@@ -165,7 +212,7 @@ $(document).ready(function () {
         $(".chat-area").append(`       
         <div class="row mt-2    mb-4  chat-right-site">
        <div class="col-lg-11  pr-2 chat-content-area-right">
-           <p>${$('textarea').val()}</p>
+           <p id="chat_userBase">${$('textarea').val()}</p>
        </div>
        <div class="col-lg-1 d-flex align-items-center avatar_chat_area">
            <img src="https://vcdn1-giaitri.vnecdn.net/2013/09/09/Big-Moon-Above-River-1378713411.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=wV3BzDufSDkPN8rM8fpyWg"

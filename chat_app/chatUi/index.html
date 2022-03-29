@@ -31,7 +31,7 @@
                         <div class="col-lg-12 menu_group">
                             <div class="col-lg-12 nav_items active_nav" id="nav_Active"><i
                                     class="far fa-comment-dots fa-2x"></i></div>
-                            <div class="col-lg-12 nav_items" id="nav_item1"><i class="fas fa-user fa-2x"></i></div>
+                            <div class="col-lg-12 nav_items testUser" id="nav_item1 "><i class="fas fa-user fa-2x"></i></div>
                             <div class="col-lg-12 nav_items" id="nav_item2"><i class="fas fa-user-friends fa-2x"></i>
                             </div>
                             <div class="col-lg-12 nav_items" id="nav_item3"><i class="fas fa-envelope fa-2x"></i></div>
@@ -39,7 +39,7 @@
                                     aria-hidden="true"></i></div>
                         </div>
                         <div class="dropdown-divider" style="border-color: #a5b5c1 !important;"></div>
-                        <div class="col-lg-12 footer_nav"><i class="fas fa-sign-out-alt fa-2x"></i></div>
+                        <div class="col-lg-12 footer_nav" id="logOutBtn"><i class="fas fa-sign-out-alt fa-2x"></i></div>
                     </div>
                     <div class="col-lg-3 chat_left">
                         <div class="col-lg-12 head_left">
@@ -64,7 +64,7 @@
                         </div>
                         <div class="dropdown-divider pb-3" style="border-color: #303841 !important;"></div>
                         <!--__________________________________________________________________ chat_box_______________________________ -->
-                        <div class="chat_box_left" style="height:100%;">
+                        <div class="chat_box_left" style="height:auto;">
                             <div class="row  chat_box ">
                                 <div class="col-lg-3 avatar_chat_box"> <img
                                         src="https://vcdn1-giaitri.vnecdn.net/2013/09/09/Big-Moon-Above-River-1378713411.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=wV3BzDufSDkPN8rM8fpyWg"
@@ -78,27 +78,28 @@
                                 <div class="col-lg-2 ping_chat_box">
                                     <span class="ping-chat">1</span>
                                 </div>
-                            </div>                                 
+                            </div>               
+                                              
                         </div>
                         <!--_________________________________________________________________________________________________ -->
                     </div>
                     <div class="col-lg-6 chat_center">
                         <div class="row head_center_chat">
                             <div class="col-lg-4 head_center_chat_left">
-                                <h5>Alina Judy</h5>
-                                <p><span class="circle"></span> online</p>
+                                <h5 style="margin : 0 !important;">Alina Judy</h5>
+                                <p style="margin : 0 !important;"><span class="circle"></span> online</p>
                             </div>
-                            <div class="col-lg-4"></div>
+                            <div class="col-lg-4 head_center_chat_center"></div>
                             <div class="col-lg-4 head_center_chat_right">
                                 <ul class="nav justify-content-center">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#"><i class="fas fa-folder call-group"></i></a>
+                                        <a class="nav-link" href="#" style="padding : 0 !important;"><i class="fas fa-folder call-group"></i></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#"><i class="fas fa-phone-alt call-group"></i></a>
+                                        <a class="nav-link" href="#" style="padding : 0 !important;"><i class="fas fa-phone-alt call-group"></i></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#"><i class="fas fa-video call-group "></i></a>
+                                        <a class="nav-link" href="#" style="padding : 0 !important;"><i class="fas fa-video call-group "></i></a>
                                     </li>
                                 </ul>
                             </div>
@@ -215,8 +216,24 @@
             </div>
         </div>
     </div>
-
-
+    <!-- SetUp-Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-auth-compat.js"></script>
+    <script>
+        const firebaseApp = firebase.initializeApp({
+            apiKey: "AIzaSyAXxdV5faBVUweTdIKcBHTm14YMBhDeJV4",
+            authDomain: "login-3c1e4.firebaseapp.com",
+            projectId: "login-3c1e4",
+            storageBucket: "login-3c1e4.appspot.com",
+            messagingSenderId: "1051827842277",
+            appId: "1:1051827842277:web:36988bfed6610766fe780c"
+        });
+        const db = firebaseApp.firestore();
+        const auth = firebaseApp.auth();
+    </script>
+    <!--  -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="querry.js"></script>
 </body>
 
